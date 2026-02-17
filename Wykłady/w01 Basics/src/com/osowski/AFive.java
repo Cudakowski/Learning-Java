@@ -1,0 +1,10 @@
+package com.osowski;
+
+public class AFive {
+    int n;
+    {
+        for(int i=1; i<=10; i++) {
+            n = n + i;
+        }
+    }
+}

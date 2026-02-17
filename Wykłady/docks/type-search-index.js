@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.osowski","l":"AFive"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.osowski","l":"ClassASeven"},{"p":"com.osowski","l":"LiczbaSix"},{"p":"com.osowski","l":"Main"},{"p":"com.osowski","l":"ToolsSix"},{"p":"com.osowski","l":"ZnakThree"}];updateSearchResults();
