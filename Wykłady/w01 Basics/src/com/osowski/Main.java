@@ -86,12 +86,17 @@ public class Main {
 
         //9
 
-        ZnakTen z1Ten = new ZnakTen();
-        z1Ten.z = 'B';
-        ZnakTen z2 = z1Ten.clone();
-        System.out.println("z1: " + z1Ten.z + " , z2: " + z2.z);
-        System.out.println("== --> " + (z1Ten == z2) );
-        System.out.println("equals --> " + z1Ten.equals(z2));
+        ZnakNine z1Nine = new ZnakNine();
+        z1Nine.z = 'B';
+        try {
+            ZnakNine z2 = z1Nine.clone();
+            System.out.println("z1: " + z1Nine.z + " , z2: " + z2.z);
+            System.out.println("== --> " + (z1Nine == z2) );
+            System.out.println("equals --> " + z1Nine.equals(z2));
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
 
     }
 }

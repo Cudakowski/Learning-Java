@@ -1,11 +1,11 @@
 package com.osowski;
 
-public class ZnakTen implements Cloneable {
+ class ZnakNine implements Cloneable  {
     char z = 'A';
 
 
-    public ZnakTen clone() throws CloneNotSupportedException {
-        return (ZnakTen) super.clone();
+    public ZnakNine clone() throws CloneNotSupportedException {
+        return (ZnakNine) super.clone();
     }
 
 
