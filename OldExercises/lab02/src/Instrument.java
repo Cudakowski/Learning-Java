@@ -1,14 +1,22 @@
 public class Instrument extends ProduktMuzyczny{
 
-    Instrument(String nazwa, double cenaBazowa, int iloscSztuk,
-               String rodzaj, String marka, boolean k){
+    boolean czyAkustyczny;
+    String marka;
+    String rodzaj;
 
+    Instrument(String name, double cenaBazowa, int iloscSztuk,
+               String rodzaj, String marka, boolean czyAkustyczny){
+        this.name=name;
+        this.iloscSztuk=iloscSztuk;
+        this.cenaBazowa=cenaBazowa;
+        this.marka=marka;
+        this.rodzaj=rodzaj;
+        this.czyAkustyczny=czyAkustyczny;
     }
 
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Instrument: "+name+", Marka: "+marka+", Rodzaj: "+rodzaj+", "+(czyAkustyczny?"akustyczny":"elektryczny")+", Cena: "+obliczCene()+" zł";
     }
     
     public double obliczCene() {

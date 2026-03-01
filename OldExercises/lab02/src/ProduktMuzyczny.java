@@ -1,19 +1,19 @@
 public abstract class ProduktMuzyczny implements Sprzedawalny{
+
+    String name;
+    int iloscSztuk;
+    double cenaBazowa;
+
     @Override
     public void zmniejszIloscSztuk(int x) {
-        // TODO Auto-generated method stub
-        
+        iloscSztuk-=x;
     }
 
     @Override
     public int getIloscSztuk() {
-        // TODO Auto-generated method stub
-        return 0;
+        return iloscSztuk;
     }
 
     @Override
-    public double obliczCene() {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+    abstract public double obliczCene();
 }

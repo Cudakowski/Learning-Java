@@ -1,38 +1,51 @@
 public class InstrumentDoWypozyczenia extends Instrument implements Wypozyczalny {
 
-    InstrumentDoWypozyczenia(String name, double cenaBazowa, int iloscSztuk, String rodzaj, String marka, boolean k, double l){
-        Instrument()
+    double dziennaStawka;
+    boolean dostepny;
+    
+
+    InstrumentDoWypozyczenia(String name, double cenaBazowa, int iloscSztuk, String rodzaj, String marka, boolean czyAkustyczny, double dziennaStawka){
+        super(name, cenaBazowa, iloscSztuk, rodzaj, marka, czyAkustyczny);
+        this.dziennaStawka=dziennaStawka;
+        this.dostepny=true;
     }
 
     @Override
     public boolean czyDostepny() {
-        // TODO Auto-generated method stub
-        return false;
+        return dostepny;
     }
 
     @Override
-    public double obliczKosztWypozyczenia(int x) {
-        // TODO Auto-generated method stub
-        return 0;
+    public double obliczKosztWypozyczenia(int liczbaDni) {
+        // Zniżka przy dłuższym okresie wypożyczenia
+        if (liczbaDni > 30) {
+            return liczbaDni * dziennaStawka * 0.8; // 20% zniżki
+        } else if (liczbaDni > 7) {
+            return liczbaDni * dziennaStawka * 0.9; // 10% zniżki
+        }
+        return liczbaDni * dziennaStawka;
     }
 
     @Override
     public void zwroc() {
-        // TODO Auto-generated method stub
+        dostepny=true;
         
     }
 
     @Override
     public void wypozycz() {
-        // TODO Auto-generated method stub
+        dostepny=false;
         
     }
+//Wypożyczono: Instrument: Gitara Elektryczna, Marka: Fender, Rodzaj: Gitara, elektryczny, Cena: 2500,00 zł, Stawka dzienna: 50,00 zł, Niedostępny
+//Koszt wypożyczenia na 14 dni: 630.0 zł
 
     
+
+//Instrument: Gitara Elektryczna, Marka: Fender, Rodzaj: Gitara, elektryczny, Cena: 2500,00 zł, Stawka dzienna: 50,00 zł, Dostępny
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
-        return super.getInfo();
+        return super.getInfo() + ", Stawka dzienna: "+dziennaStawka+" zł, "+ (czyDostepny()?"Dostępny":"Niedostępny");
     }
 
 }

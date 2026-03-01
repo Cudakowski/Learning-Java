@@ -1,8 +1,14 @@
 public class Akcesorium extends ProduktMuzyczny{
 
-    Akcesorium(String name, double cenaBazowa, int iloscSztuk,
-               String rodzaj, boolean k){
+    boolean czyProfesjonalne;
+    String rodzaj;
 
+    Akcesorium(String name, double cenaBazowa, int iloscSztuk,
+               String rodzaj, boolean czyProfesjonalne){
+        this.name=name;
+        this.iloscSztuk=iloscSztuk;
+        this.cenaBazowa=cenaBazowa;
+        this.rodzaj=rodzaj;
     }
     
     public double obliczCene() {
@@ -12,7 +18,6 @@ public class Akcesorium extends ProduktMuzyczny{
 
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Akcesorium: "+name+", Kategoria: "+rodzaj+", "+(czyProfesjonalne?"profesjonalne":"amatorskie")+", Cena: "+obliczCene()+" zł";
     }
 }

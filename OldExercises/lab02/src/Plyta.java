@@ -1,9 +1,16 @@
 public class Plyta extends ProduktMuzyczny{
     int rokWydania;
+    String autor;
+    String gatunek;
 
-    Plyta(String tytul, double cenaBazowa, int iloscSztuk,
+    Plyta(String name, double cenaBazowa, int iloscSztuk,
           String autor, int rokWydania, String gatunek){
-
+        this.name=name;
+        this.iloscSztuk=iloscSztuk;
+        this.cenaBazowa=cenaBazowa;
+        this.autor=autor;
+        this.gatunek=gatunek;
+        this.rokWydania=rokWydania;
     }
 
     public double obliczCene() {
@@ -14,7 +21,6 @@ public class Plyta extends ProduktMuzyczny{
 
     @Override
     public String getInfo() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Płyta: "+name+", Wykonawca: "+autor+", Rok: "+rokWydania+", Gatunek: "+gatunek+", Cena: "+obliczCene()+" zł";
     }
 }
