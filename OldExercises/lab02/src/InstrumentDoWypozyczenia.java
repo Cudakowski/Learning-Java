@@ -45,7 +45,7 @@ public class InstrumentDoWypozyczenia extends Instrument implements Wypozyczalny
 //Instrument: Gitara Elektryczna, Marka: Fender, Rodzaj: Gitara, elektryczny, Cena: 2500,00 zł, Stawka dzienna: 50,00 zł, Dostępny
     @Override
     public String getInfo() {
-        return super.getInfo() + ", Stawka dzienna: "+dziennaStawka+" zł, "+ (czyDostepny()?"Dostępny":"Niedostępny");
+        return super.getInfo() + ", Stawka dzienna: "+String.format ("%.2f", dziennaStawka)+" zł, "+ (czyDostepny()?"Dostępny":"Niedostępny");
     }
 
 }

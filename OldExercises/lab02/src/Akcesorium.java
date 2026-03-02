@@ -18,6 +18,6 @@ public class Akcesorium extends ProduktMuzyczny{
 
     @Override
     public String getInfo() {
-        return "Akcesorium: "+name+", Kategoria: "+rodzaj+", "+(czyProfesjonalne?"profesjonalne":"amatorskie")+", Cena: "+obliczCene()+" zł";
+        return "Akcesorium: "+name+", Kategoria: "+rodzaj+", "+(czyProfesjonalne?"profesjonalne":"amatorskie")+", Cena: "+String.format ("%.2f", obliczCene())+" zł";
     }
 }

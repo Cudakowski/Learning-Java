@@ -16,7 +16,7 @@ public class Instrument extends ProduktMuzyczny{
 
     @Override
     public String getInfo() {
-        return "Instrument: "+name+", Marka: "+marka+", Rodzaj: "+rodzaj+", "+(czyAkustyczny?"akustyczny":"elektryczny")+", Cena: "+obliczCene()+" zł";
+        return "Instrument: "+name+", Marka: "+marka+", Rodzaj: "+rodzaj+", "+(czyAkustyczny?"akustyczny":"elektryczny")+", Cena: "+String.format("%.2f", obliczCene())+" zł";
     }
     
     public double obliczCene() {

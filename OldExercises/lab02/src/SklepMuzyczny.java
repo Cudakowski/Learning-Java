@@ -43,7 +43,7 @@ public class SklepMuzyczny {
         if(ins.czyDostepny()){
             ins.wypozycz();
             System.out.println("Wypożyczono: "+ins.getInfo());
-            System.out.println("Koszt wypożyczenia na "+x+" dni: "+ins.obliczKosztWypozyczenia(x)+" zł");
+            System.out.println("Koszt wypożyczenia na "+x+" dni: "+String.format ("%.2f", ins.obliczKosztWypozyczenia(x))+" zł");
         }
         else{
             System.out.println("Błąd: Instrument nie jest dostępny do wypożyczenia");

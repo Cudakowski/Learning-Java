@@ -21,6 +21,6 @@ public class Plyta extends ProduktMuzyczny{
 
     @Override
     public String getInfo() {
-        return "Płyta: "+name+", Wykonawca: "+autor+", Rok: "+rokWydania+", Gatunek: "+gatunek+", Cena: "+obliczCene()+" zł";
+        return "Płyta: "+name+", Wykonawca: "+autor+", Rok: "+rokWydania+", Gatunek: "+gatunek+", Cena: "+String.format ("%.2f", obliczCene())+" zł";
     }
 }
