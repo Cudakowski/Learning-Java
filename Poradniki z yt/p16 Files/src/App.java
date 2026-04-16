@@ -7,7 +7,7 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) throws Exception {
         //Do pliku:
-        //FileWriter(samll/medium files), BufferedWriter(large trext), PrintWrtier(structured data: reports, logs), FileOutputStream(binary files)
+        //FileWriter(samll/medium files), BufferedWriter(large text), PrintWrtier(structured data: reports, logs), FileOutputStream(binary files)
         
         String filePath =".\\texts\\test.txt";
         String textContent = """
