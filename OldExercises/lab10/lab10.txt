@@ -1,0 +1,15 @@
+Zadanie: Lista Zadań (To-Do List) w JavaFX
+Funkcjonalności do zaimplementowania:
+1. Obsługa zdarzeń:
+Przycisk "Dodaj" - dodaje nowe zadanie
+
+2. Kontrolki:
+TextField - wprowadzanie nowych zadań
+ListView - wyświetlanie listy zadań
+Buttony - różne akcje (dodaj, usuń, wyczyść, zapisz)
+Label - etykiety i pasek statusu
+3. Operacje plikowe:
+
+Automatyczne wczytywanie zadań przy starcie
+Zapisywanie zadań do pliku zadania.txt
+Obsługa błędów przy operacjach na plikach
