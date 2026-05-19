@@ -1,5 +1,4 @@
 import java.io.File;
-import java.util.Scanner;
 //Zaprogramuj kompressor zip, który jako parametry z linii komend przyjmie folder źródłowy oraz folder docelowy.
 //Pliki w folderze źródłowym (nazwijmy go to_compress i zawiera on dostarczone pliki) zostaną zzipowane,
 // oddzielnie plik po pliku i zapisane w folderze docelowym.
@@ -10,19 +9,37 @@ import java.util.Scanner;
 public class FolderCompressor {
     public static void main(String[] args) {
 //        ???
-        String sourcePath;
-        String destPath;
+        if(args.length<2){
+            System.out.println("Błędne wywołanie");
+            System.out.println("Wywołuje się: java program [sourcePath] [destPath]");
+            return;
+        }
+        String sourcePath=args[0];
+        String destPath=args[1];
+
+        File sourceFolder = new File(sourcePath);
+        if(!sourceFolder.exists() || !sourceFolder.isDirectory()){
+            System.out.println("Folder źródłowy nie istnieje bądź nie jest folderem");
+            return;
+        }
         
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Podaj folder źródłowy: ");
-            sourcePath = scanner.nextLine();
-            System.out.print("Podaj folder docelowy: ");
-            destPath = scanner.nextLine();
-        } catch (Exception e) {
-            System.out.println("Input Exception");
+        File destFolder = new File(destPath);
+        if(!destFolder.exists()){
+            destFolder.mkdir();
         }
 
-
+        File[] files = sourceFolder.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    CompressingTask task = new CompressingTask(file, destPath);
+                    Thread thread = new Thread(task);
+                    thread.start();
+                }
+            }
+        } else {
+            System.out.println("Brak plików w folderze źródłowym");
+        }
     }
 }
 //

@@ -9,6 +9,35 @@ import java.io.File;
 public class FolderUncompressor {
     public static void main(String[] args) {
 //        ???
+        if(args.length<2){
+            System.out.println("Błędne wywołanie");
+            System.out.println("Wywołuje się: java ./program [sourcePath] [destPath]");
+            return;
+        }
+        String sourcePath=args[0];
+        String destPath=args[1];
+
+        File sourceFolder = new File(sourcePath);
+        if(!sourceFolder.exists() || !sourceFolder.isDirectory()){
+            System.out.println("Folder źródłowy nie istnieje bądź nie jest folderem");
+            return;
+        }
+        
+        File destFolder = new File(destPath);
+        if(!destFolder.exists()){
+            destFolder.mkdir();
+        }
+
+        File[] files = sourceFolder.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && file.getName().endsWith(".zip")) {
+                    UncompressingTask task = new UncompressingTask(file, destPath);
+                    Thread thread = new Thread(task);
+                    thread.start();
+                }
+            }
+        }
     }
 }
 
